@@ -7,7 +7,11 @@
 import os
 import time
 import json
-
+from tencentcloud.common import credential
+from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.common.profile.http_profile import HttpProfile
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+from tencentcloud.cvm.v20170312 import cvm_client, models
 
 while 1:
     # 开局先读取上一次ip进内存
