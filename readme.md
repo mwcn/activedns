@@ -21,7 +21,7 @@
 ## 使用方法：
 
 `pip install tencentcloud-sdk-python`
-
+`pip install json`
 `python index.py`
 
 ## 项目说明：
