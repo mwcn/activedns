@@ -10,7 +10,7 @@
 ## 参数配置：
 1. config.txt 该文件为域名配置文件，SecretId，SecretKey需登录腾讯云访问管理处生成。（登录腾讯云后访问https://console.cloud.tencent.com/cam/capi）
 
-![image-20220501180609230](Z:/source/images/image-20220501180609230.png)
+![image-20220501180609230](https://mue.cx/images/image-20220501181609345.png)
 
 这里我打了星号，从腾讯云api管理处获取到的是完整的，自行填写完整id与key
 
