@@ -17,21 +17,18 @@ while 1:
     # 开局先读取上一次ip进内存
     f = open("ip.txt", "r")
     str = f.read()
-    f.close()
 
     # 这次的ip，获取到后再写入
-    file_handle = open('ip.txt', mode='w+')
-    f = os.popen("curl -ss ifconfig.me")  #这里ifconfig.me可以换 参考https://mue.cx/2022/88f44ab99bd9.html网站
+    file_handle = open('ip.txt', mode='r+')
+    f = os.popen("curl -ss ipinfo.io/ip")  #这里ifconfig.me可以换 参考https://mue.cx/2022/88f44ab99bd9.html网站
     a = f.read().strip()
+    print(a)
     file_handle.write(a)
-    file_handle.close()
-
     # 对两次ip进行判断
     if a == str:
         print('IP相同，解析正常')
-        time.sleep(3)
     else:
-        print('公网IP已变更，正在执行代码块···')
+        print('公网IP已变更，正在修改解析···')
         import json
         import os
         import time
@@ -72,8 +69,8 @@ while 1:
 
             num = resp_dict['DomainCountInfo']['DomainTotal']
 
-            for i in range(num):
-                print(resp_dict['DomainList'][i]['Name'])
+           # for i in range(num):
+               # print(resp_dict['DomainList'][i]['Name'])
             print("域名列表列出成功 API通信正常")
             print("------------------------------")
             time.sleep(1)
@@ -126,7 +123,7 @@ while 1:
             resp_dict = json.loads(resp.to_json_string())
             print("新增解析成功")
             del str
-            file_handle = open('delrecord.txt', mode='w+')
+            file_handle = open('delrecord.txt', mode='r+')
             f = resp_dict['RecordId']  # 这里ip.sb可以换 参考xxxx网站
             b = str(f)
             file_handle.write(b)
